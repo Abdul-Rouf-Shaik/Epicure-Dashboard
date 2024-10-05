@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../http";
 import { Link } from "react-router-dom";
 
 export default function Dashboard() {

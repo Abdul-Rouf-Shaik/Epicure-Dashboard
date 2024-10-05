@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Box, Button, FormControl, FormLabel, Input, Heading } from '@chakra-ui/react';
-import axios from 'axios'; 
+import axios from '../http'; 
 import useAuth from '../hooks/useAuth';
 
 const EditDispenser = () => {

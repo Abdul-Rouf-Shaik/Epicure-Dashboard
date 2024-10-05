@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Heading, Text } from '@chakra-ui/react';
-import axios from 'axios';
+import axios from '../http';
 import DispenserManager from '../components/DispenserManager';
 import RecipeManager from '../components/RecipeManager';
 

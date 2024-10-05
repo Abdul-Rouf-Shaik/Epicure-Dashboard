@@ -23,7 +23,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import axios from "axios";
+import axios from "../http";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const RecipeManager = ({ machineId }) => {

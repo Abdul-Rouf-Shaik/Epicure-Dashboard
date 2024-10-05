@@ -14,7 +14,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import axios from "axios";
+import axios from "../http";
 import { Link, Link as RouterLink, useNavigate } from 'react-router-dom';
 
 const DispenserManager = ({ machineId }) => {

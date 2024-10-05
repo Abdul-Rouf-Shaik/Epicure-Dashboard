@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Box, Button, FormControl, FormLabel, Input, Heading } from '@chakra-ui/react';
-import axios from 'axios'; // Ensure you have axios installed
+import axios from '../http'; // Ensure you have axios installed
 import useAuth from '../hooks/useAuth';
 
 export default function Login() {
