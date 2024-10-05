@@ -32,7 +32,7 @@ const RecipeManager = ({ machineId }) => {
   const [recipeId, setRecipeId] = useState('');
   const [recipeValue, setRecipeValue] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
-
+  const [editComplete, setEditComplete] = useState(false)
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -41,6 +41,14 @@ const RecipeManager = ({ machineId }) => {
     };
     fetchRecipes();
   }, [machineId]);
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      const response = await axios.get(`/api/recipes/${machineId}`);
+      setRecipes(response.data);
+    };
+    fetchRecipes();
+  }, [editComplete]);
 
   const handleDelete = async (id) => {
     if(user?.isAdmin) {
@@ -62,7 +70,8 @@ const RecipeManager = ({ machineId }) => {
       } catch (err) {
         console.log(err)
       }
-    window.location.reload();
+    // window.location.reload();
+    setEditComplete(!editComplete);
     onClose();
   }
 

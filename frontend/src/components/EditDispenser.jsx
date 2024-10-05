@@ -14,7 +14,6 @@ const EditDispenser = () => {
     const navigate = useNavigate(); 
     const { machineId, dispenserId } = useParams();
     const user = JSON.parse(localStorage.getItem('user'));
-    
 
     const handleSubmit = async (e) => {
       e.preventDefault();
