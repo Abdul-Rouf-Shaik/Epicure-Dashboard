@@ -9,10 +9,6 @@ This is a full-stack admin dashboard for managing machines, dispensers, and reci
 - [Installation](#installation)
 - [Backend Setup](#backend-setup)
 - [Frontend Setup](#frontend-setup)
-- [Testing the API](#testing-the-api)
-- [Features](#features)
-- [Responsive Design](#responsive-design)
-- [License](#license)
 
 ## Project Structure
 
