@@ -92,7 +92,7 @@ dashboard-project/
 4. Run the backend server:
 
    ```bash
-   npm run dev
+   node server.js
    ```
 
 ### Frontend Setup
