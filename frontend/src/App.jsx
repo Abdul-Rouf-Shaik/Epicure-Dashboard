@@ -6,6 +6,8 @@ import useAuth from "./hooks/useAuth"; // Import the useAuth hook
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import EditDispenser from "./components/EditDispenser";
+import { Box } from "@chakra-ui/react";
+import "./App.css";
 
 export default function App() {
   const { isAuthenticated, login, logout } = useAuth(); // Use the hook
@@ -13,14 +15,19 @@ export default function App() {
   return (
     <>
       <Router>
-      <Navbar />
+        <Box minHeight={"100vh"} display={"flex"} flexDirection={"column"}>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/machines/:machineId/dispensers/:dispenserId/edit" element={<EditDispenser />} />
+          <Route
+            path="/machines/:machineId/dispensers/:dispenserId/edit"
+            element={<EditDispenser />}
+          />
           <Route path="/machines/:machineId" element={<MachineDetails />} />
           <Route path="/login" element={<Login onLogin={login} />} />
         </Routes>
-      <Footer />
+        <Footer />
+        </Box>
       </Router>
     </>
   );

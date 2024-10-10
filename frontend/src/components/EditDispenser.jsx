@@ -31,8 +31,8 @@ const EditDispenser = () => {
 
 
     return (
-      <Box bg="#020817" color="white" minHeight="100vh">
-        <Box p={4} margin={"auto"} width={"50%"}>
+      <Box flex={1} display={"flex"} pt={"30px"} justifyContent={"center"} alignItems={"top"} bg="#000000" color="white">
+        <Box p={4} width={"50%"}>
           <Heading as="h2" size="lg" mb={4}>Edit Dispenser</Heading>
           {error && <Box color="red.500" mb={4}>{error}</Box>} {/* Display error message */}
           <form onSubmit={handleSubmit}>
@@ -44,7 +44,7 @@ const EditDispenser = () => {
               <FormLabel>Quantity:</FormLabel>
               <Input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
             </FormControl>
-            <Button type="submit" colorScheme="teal">Edit</Button>
+            <Button type="submit" color="#000000" bgColor={"#6EE7B7"}>Edit</Button>
           </form>
         </Box>
       </Box>

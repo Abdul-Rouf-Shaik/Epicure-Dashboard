@@ -38,8 +38,8 @@ export default function Login() {
   })
 
   return (
-    <Box bg="#020817" color="white" minHeight="100vh">
-      <Box p={4} margin={"auto"} width={"50%"}>
+    <Box bg="#000000" flex={1} display={"flex"} pt={"30px"} justifyContent={"center"} alignItems={"top"} color="white">
+      <Box p={4}  width={"50%"}>
         <Heading as="h2" size="lg" mb={4}>Login</Heading>
         {error && <Box color="red.500" mb={4}>{error}</Box>} {/* Display error message */}
         <form onSubmit={handleSubmit}>

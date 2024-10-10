@@ -8,6 +8,7 @@ import {
   Button,
   Heading,
   Table,
+  TableContainer,
   Tbody,
   Td,
   Th,
@@ -50,11 +51,12 @@ const DispenserManager = ({ machineId }) => {
   };
 
   return (
-    <Box my={10}>
+    <Box overflowX={"hidden"} my={10}>
       <Heading size="md" mb={4}>
         Dispenser Management
       </Heading>
-      <Table variant="striped" colorScheme="">
+      <TableContainer>
+      <Table variant="striped" colorScheme="" size={"lg"}>
         <Thead>
           <Tr>
             <Th>Ingredient</Th>
@@ -62,17 +64,15 @@ const DispenserManager = ({ machineId }) => {
             <Th>Actions</Th>
           </Tr>
         </Thead>
-        <Tbody>
+        <Tbody overflow={"auto"}>
           {dispensers.map((dispenser) => (
             <Tr key={dispenser._id}>
               <Td>{dispenser.ingredient}</Td>
               <Td>{dispenser.quantity}</Td>
-              <Td>
-                {/* <Link as={RouterLink} to={`/machines/${machineId}/dispensers/${dispenser._id}/edit`}> */}
-                  <Button size="sm" onClick={() => handleEdit(machineId, dispenser._id)} colorScheme="yellow" mr={2}>
+              <Td display={"flex"}>
+                  <Button size="sm" onClick={() => handleEdit(machineId, dispenser._id)} bgColor={"#6EE7B7"} color="black" mr={2}>
                     Edit
                   </Button>
-                {/* </Link> */}
                 <Link as={RouterLink}>
                   <Button
                     size="sm"
@@ -87,6 +87,7 @@ const DispenserManager = ({ machineId }) => {
           ))}
         </Tbody>
       </Table>
+      </TableContainer>
     </Box>
   );
 };

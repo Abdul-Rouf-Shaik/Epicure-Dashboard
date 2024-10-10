@@ -16,38 +16,54 @@ export default function Dashboard() {
     };
     fetchMachines();
   }, []);
+
+  if (machines.length === 0)
+    return (
+      <Box
+        className="loader-container"
+        flex={1}
+        bgColor={"#000000"}
+        display={"flex"}
+        justifyContent={"center"}
+      >
+        <svg viewBox="0 0 400 160">
+          <text
+            x="50%"
+            y="50%"
+            dy=".32em"
+            textAnchor="middle"
+            className="text-body"
+          >
+            Epicure
+          </text>
+          <text
+            x="50%"
+            y="50%"
+            dy=".32em"
+            dx="1.8em"
+            textAnchor="middle"
+            className="text-body"
+          >
+            .
+          </text>
+        </svg>
+      </Box>
+    );
   return (
     <>
-      <Box bg="#020817" width={""} color="white">
+      <Box flex={1} bg="#000000" color="white">
         <Box
           p={4}
-          // bgColor={"green"}
-          minHeight={"100vh"}
           display={"flex"}
           flexDir={"column"}
-        //   alignItems={"center"}
           width={"100%"}
         >
           <Heading margin={"0 auto"} as="h2" size="lg" mb={4}>
             Dashboard
           </Heading>
-          {/* <Grid templateColumns="repeat(auto-fill, minmax(500px, 1fr))" gap={6}>
-          {machines.map((machine) => (
-            <Link to={`/machines/${machine._id}`} key={machine._id}>
-              <GridItem p={4} bg="#1b2431" borderRadius="lg" textAlign="center">
-                <Text fontSize="xl" mb={2}>
-                  {machine.name}
-                </Text>
-                <Text>Status: {machine.sensorStatus || "Operational"}</Text>
-              </GridItem>
-            </Link>
-          ))}
-        </Grid> */}
           <Box
-            //   backgroundColor={"yellow"}
             display={"flex"}
             flexWrap={"wrap"}
-            // alignItems={"center"}
             justifyContent={"center"}
             width={"100%"}
             gap={"20px"}
@@ -56,14 +72,15 @@ export default function Dashboard() {
               <Box
                 key={id}
                 p={4}
-                width={"45%"}
-                bg="#1b2431"
+                width={["100%", "45%"]}
+                bg="#6EE7B7"
+                color={"#000000"}
                 borderRadius="lg"
                 textAlign="center"
               >
                 <Link to={`/machines/${machine._id}`} key={machine._id}>
                   <Text fontSize="xl" mb={2}>
-                    {machine.name}
+                    <b>{machine.name}</b>
                   </Text>
                   <Text>Status: {machine.sensorStatus || "Operational"}</Text>
                 </Link>

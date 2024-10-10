@@ -92,7 +92,7 @@ const RecipeManager = ({ machineId }) => {
       {isOpen && (
         <Modal isOpen={isOpen} onClose={(e)=>onClose(e)}>
           <ModalOverlay />
-          <ModalContent>
+          <ModalContent color={"white"} bgColor={"#323232"}>
             <ModalHeader>Edit the Recipe </ModalHeader>
             <ModalCloseButton />
             <ModalBody>
@@ -105,7 +105,8 @@ const RecipeManager = ({ machineId }) => {
             <ModalFooter display={"flex"} justifyContent={"center"}>
               <Button
                 width={"100%"}
-                colorScheme="blue"
+                color="black"
+                bgColor={"#6EE7B7"}
                 mr={3}
                 onClick={editRecipe}
               >
@@ -152,7 +153,7 @@ const RecipeManager = ({ machineId }) => {
               </CardBody>
               <CardFooter>
                 <Box display={"flex"} gap={"20px"}>
-                  <Button backgroundColor={"yellow"} onClick={() => handleEdit(recipe._id)}>
+                  <Button backgroundColor={"#6EE7B7"} onClick={() => handleEdit(recipe._id)}>
                     Edit
                   </Button>
                   <Button backgroundColor={"red"} color={"white"} onClick={() => handleDelete(recipe._id)}>

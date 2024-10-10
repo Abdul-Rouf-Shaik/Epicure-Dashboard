@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": 'https://epicure-dashboard.onrender.com'
+      // "/api": 'https://localhost:5000'
     }
   }
 })
